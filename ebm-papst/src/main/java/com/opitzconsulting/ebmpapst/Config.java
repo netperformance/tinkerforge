@@ -27,7 +27,7 @@ public class Config {
     @Value("classpath:/device2.private.key")
     private Resource privateKey;
 
-    private static final String ENDPOINT = "a2p6ctsf8kybe-ats.iot.eu-north-1.amazonaws.com";
+    private static final String ENDPOINT = "a2p6ctsf8kybe-ats.iot.eu-central-1.amazonaws.com";
 
     private static final String CLIENT_ID = "sdk-java";
 
