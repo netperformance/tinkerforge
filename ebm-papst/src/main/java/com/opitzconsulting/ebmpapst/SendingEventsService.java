@@ -3,6 +3,7 @@ package com.opitzconsulting.ebmpapst;
 import com.tinkerforge.BrickletTemperature;
 import com.tinkerforge.IPConnection;
 import com.tinkerforge.TinkerforgeException;
+import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,7 @@ public class SendingEventsService {
         this.awsEventSender = awsEventSender;
     }
 
+    @PostConstruct
     public void connectAndSendEvents() {
         try {
             connectToDevice();
