@@ -42,6 +42,7 @@ public class SendingEventsService {
         // Add temperature listener
         t.addTemperatureListener(new BrickletTemperature.TemperatureListener() {
             public void temperature(short temperature) {
+                LOG.info("getting temperature: {}", temperature);
                 awsEventSender.sendTemperatureToAws(temperature);
             }
         });
