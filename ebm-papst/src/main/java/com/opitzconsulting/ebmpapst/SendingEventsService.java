@@ -55,7 +55,8 @@ public class SendingEventsService {
         // Note: The temperature callback is only called every second
         //       if the temperature has changed since the last call!
         t.setTemperatureCallbackPeriod(1000);
-        ipcon.disconnect();
+        ipcon.setAutoReconnect(true);
+//        ipcon.disconnect();
     }
 
 }
