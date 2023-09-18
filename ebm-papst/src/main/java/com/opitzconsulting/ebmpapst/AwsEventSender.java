@@ -19,7 +19,7 @@ public class AwsEventSender {
     }
 
     public void sendTemperatureToAws(short temperature) {
-        final String msg = String.format("{ \"time\": \"%s\", \"value\": \"%s\" }", System.currentTimeMillis(), temperature);
+        final String msg = String.format("{ \"time\": \"%s\", \"value\": %s }", System.currentTimeMillis(), temperature/100.0);
 
         // Connect the MQTT client
         CompletableFuture<Boolean> connected = mqttClientConnection.connect();
