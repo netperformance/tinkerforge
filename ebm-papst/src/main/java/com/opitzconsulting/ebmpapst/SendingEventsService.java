@@ -27,6 +27,7 @@ public class SendingEventsService {
 
     @PostConstruct
     public void connectAndSendEvents() {
+        LOG.info("connectAndSendEvents: ...");
         try {
             connectToDevice();
         } catch (Exception e) {
@@ -35,6 +36,7 @@ public class SendingEventsService {
     }
 
     private void connectToDevice() throws TinkerforgeException {
+        LOG.info("connect to device: host={}, port={}", HOST, PORT);
         IPConnection ipcon = new IPConnection(); // Create IP connection
         BrickletTemperature t = new BrickletTemperature(UID, ipcon); // Create device object
 
